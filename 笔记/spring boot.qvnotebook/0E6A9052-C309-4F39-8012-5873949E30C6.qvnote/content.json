@@ -1,0 +1,18 @@
+{
+  "title": "全局异常处理",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "###使用到到注解\n1. @ControllerAdvice\n2. @ExceptionHandler\n\n###实例代码"
+    },
+    {
+      "type": "code",
+      "language": "c_cpp",
+      "data": "@ControllerAdvice\npublic class GlobalExceptionHandler {\n    @ExceptionHandler(RuntimeException.class)\n\n    @ResponseBody\n    public ExceptionResponse exceptionHandler(RuntimeException e, HttpServletResponse response){\n        ExceptionResponse resq=new ExceptionResponse();\n        resq.setCode(500);\n        resq.setMsg(e.getMessage());\n\n        return resq;\n    }\n}"
+    },
+    {
+      "type": "markdown",
+      "data": "###扩展\n1. @Validated：对参数进行合法性检查，\n2. 只有添加到`@ExceptionHandler`中`异常类`才会被进行全局处理"
+    }
+  ]
+}
