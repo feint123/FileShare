@@ -1,0 +1,9 @@
+{
+  "title": "基本概念",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## 监督式学习\n\n* 分类：\n  * 实例（Instances）：值和属性的矢量输入（Input）\n  * 概念（concept）：将输入空间映射到具体的输出空间（Function）\n  * 目标概念（Target concept）：\n* 回归：\n\n概念学习和一般到特殊序\n\n术语\n\n* 目标概念：待学习的概念或函数\n* 训练样例\n\n机器学习的任务是在整个实例集合X上确定与目标概念c相同的假设h\n\n归纳学习假设：任一假设如果在足够大的训练样例集中很好的逼近女表函数，他也能在未见实例中很好的逼近目标函数\n\n决策树\n\n适用问题\n\n1. 实例是由“属性-值“表示的，每个属性都取少数离散的值\n2. 目标函数具有离散的输出值\n3. 训练数据可以包含错误\n4. 训练数据可以包含缺少属性值的实例\n\n算法\n\nID3算法\n\nID3(Examples, Target\\_attribute, Attributes)\n\nExamples:训练样例集。\n\nTarget\\_attributes:这棵树要预测的目标属性。\n\nAttributes:除目标属性外，供学习到的决策树测试的属性列表。\n\n返回值:一棵能够正确分类给定Examples的决策树\n\n过程:\n\n1. 创建树的Root节点\n2. 如果Examples都为正，返回lable=+的单节点树Root\n3. 如果Examples都为反，…-…\n4. 如果Attributes为空，那么返回单节点树Root，lable=Examples中最普遍的Target\\_attribute值\n5. 否则开始\n  1. A\\<=Attributes中分类Examples能力最好的属性\n  2. Root的决策属性\\<=A\n  3. 对于A的每个可能值vi"
+    }
+  ]
+}
