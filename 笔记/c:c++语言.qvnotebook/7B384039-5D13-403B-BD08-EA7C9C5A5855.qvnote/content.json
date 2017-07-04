@@ -1,0 +1,9 @@
+{
+  "title": "STL",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><span style=\"line-height: 1.1;\">容器</span><br></div><h3>array</h3><h3><br>list</h3><h3><br>vector</h3><h3><br>deque</h3><h3><br>map</h3><h3><br>set</h3><h3><br>multimap</h3><h3><br>multiset</h3><div><br></div><div>迭代器</div><div>container::iterator：以“读／写”方式遍历元素</div><div>container::const_iterator：以只读方式遍历元素</div><div><hr><h3>算法&lt;algorithm.h&gt;</h3></div><div>int <b>count</b>(begin_iterator, end_iterator, const T&amp;value)：返回value在容器中出现的次数</div><div><br></div><div><b>generate</b></div><div><b><br></b></div><div><b>replace</b></div><div><b><br></b></div><div><b>max_element</b></div><div><b>min_element</b></div><h3>算术&lt;numeric.h&gt;</h3><div>T <b>accumulate</b>(begin_iterator, end_iterator, T value)：</div><div>运算规则：value＝value＋I（列表项的值）</div><div>返回值：value</div><div><br></div><div>T <b>accumulate</b>(begin_iterator, end_iterator, T value, Pred pr)：</div><div>pr：函数指针，用来定义运算规则<b>pr(value,I)</b>;</div><div><br></div><div><span style=\"font-weight: normal;\">out_iterator </span><b>partial_sum</b><span style=\"font-weight: normal;\">(begin_iterator, end_iterator, out_iterator result):&nbsp;</span></div><div>功能：得到一个前n项和的列表</div><h3>函数对象&lt;functional.h&gt;</h3><div>unary_function<span style=\"line-height: 1.4;\">：</span></div><div>binary_function:</div><div><b>negate</b>(cont T&amp;x)：返回x的相反数</div><div><br></div><div><br></div><div></div>"
+    }
+  ]
+}

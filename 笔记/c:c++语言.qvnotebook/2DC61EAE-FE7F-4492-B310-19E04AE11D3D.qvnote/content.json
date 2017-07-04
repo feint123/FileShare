@@ -1,0 +1,9 @@
+{
+  "title": "c++小贴士",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>声明为 explicit的构造函数不能进行隐式转换。</div><div><br></div><h3>类型转换操作符</h3><div>static_cast&lt;T&gt;</div><div><br></div><div>dynamic_cast&lt;T&gt;</div><div>将父类向下转型为其子类对象。</div><div><br></div><div>const_cast&lt;T&gt;</div><div>用于加上或者去处类型的const属性</div><div><hr><h3>函数集</h3></div><div><br></div><div>template&lt;class T1, class T2&gt; struct&nbsp;pair</div><div>pair.first</div><div>pair.second</div><div>pair&lt;T1, &nbsp;T2&gt;&nbsp;make_pair(const T1&amp; x, const T2&amp; y);</div><div><br></div><div>auto_ptr&lt;T&gt;(class&lt;T&gt; c);</div><div><br></div><div>numeric_limits&lt;T&gt;;</div><div><br></div><div>min();</div><div>max();</div><div><br></div><div>namespace std::rel_ops;</div><div><br></div><div>exit(int status)：退出程序，清理static对象；</div><div>abort()：退出程序，在某些系统上可能导致崩溃</div><div>atexit(void (*function)())：退出程序时调用某些函数</div><div><hr><h3>类型</h3></div><div><br></div><div>&lt;cstddef&gt;</div><div>NULL: 指针值，用来表示“未定义” 或“无值”</div><div>size_t：一种无符号类型</div><div>ptrdiff_t：一种带符号的类型，用来表示指针之间的距离</div><div>offsetof：表示一个成员在struct或union中的偏移量</div><div><br></div><div>EXIT_SUCCESS</div><div>EXIT_FAILURE</div><div><hr><br></div>"
+    }
+  ]
+}
