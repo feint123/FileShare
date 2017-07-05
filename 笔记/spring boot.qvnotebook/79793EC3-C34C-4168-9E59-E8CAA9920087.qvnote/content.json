@@ -1,4 +1,27 @@
 {
   "title": "AOP",
-  "cells": []
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "### 使用到的注解\n@Aspect\n@PointCut\n@Around\n@Component\n\n### 实例代码"
+    },
+    {
+      "type": "code",
+      "language": "c_cpp",
+      "data": "@Aspect\n@Component\npublic class RequestInterceptor {\n    private Logger logger= LoggerFactory.getLogger(RequestInterceptor.class);\n    /**\n     *使用AspectJ表达式 \n     **/\n    @Pointcut(\"execution(* com.example.demo..* (..)) &&\" +\n            \" @annotation(org.springframework.web.bind.annotation.RequestMapping)\")\n    public void requestPointCut(){}\n\n    @Around(\"requestPointCut()\")\n    public Object interceptor(ProceedingJoinPoint joinPoint) throws Throwable {\n        MethodSignature methodSignature=(MethodSignature)joinPoint.getSignature();\n        Method method=methodSignature.getMethod();\n        \n        Class clazzes[]=method.getParameterTypes();\n        for(Class clazz:clazzes)\n            logger.info(\"param: \"+clazz.getName());\n        logger.info(method.getName());\n\n        HttpServletRequest request=(HttpServletRequest)joinPoint.getArgs()[0];\n        \n        return joinPoint.proceed();\n    }\n}"
+    },
+    {
+      "type": "markdown",
+      "data": "### 扩展\n1. AspectJ表达式\n2. 通过request获取客户端的信息：\n    1. request.getRemoteHost()：获取请求主机的名称\n    2. request.getRemoteAddr()：获取请求主机的IP地址\n    3. request.getHeader(\"User-Agent\")：获取浏览器信息\n    4. 解析“User－Agent”：导入以下依赖"
+    },
+    {
+      "type": "code",
+      "language": "c_cpp",
+      "data": "<dependency>\n\t<groupId>eu.bitwalker</groupId>\n\t<artifactId>UserAgentUtils</artifactId>\n\t<version>1.20</version>\n</dependency>"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
 }

@@ -1,0 +1,22 @@
+{
+  "title": "读取配置文件",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "### 使用到的注解\n\n@Configuration\n@PropertySource\n\n### 实例代码"
+    },
+    {
+      "type": "code",
+      "language": "c_cpp",
+      "data": "@Configuration\n@PropertySource(value = \"classpath:ma.properties\",ignoreResourceNotFound = true)\npublic class Manager {\n\n    @Value(\"${ma.name}\")\n    private String name;\n\n    public String getUser()\n    {\n        return name;\n    }\n\n}"
+    },
+    {
+      "type": "markdown",
+      "data": "### 扩展\n1. 框架默认是扫描resources文件夹中的配置文件\n2. 可以在maven的配置文件pom.xml中修改默认资源文件夹"
+    },
+    {
+      "type": "text",
+      "data": "<pre style=\"font-family: Monaco; font-size: 12pt;\"><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">build</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\"><br>   </font><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">plugins</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\"><br>      </font><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">plugin</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\"><br>         </font><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">groupId</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\">org.springframework.boot</font><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;/</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">groupId</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\"><br>         </font><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">artifactId</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\">spring-boot-maven-plugin</font><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;/</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">artifactId</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\"><br>      </font><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;/</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">plugin</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\"><br>   </font><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;/</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">plugins</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\"><br></font><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">   &lt;resources&gt;<br>      &lt;resource&gt;<br>         &lt;directory&gt;src/main/resources/res&lt;/directory&gt;<br>      &lt;/resource&gt;<br>   &lt;/resources&gt;</font><font color=\"#000000\" style=\"background-color: rgb(255, 255, 255);\"><br></font><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&lt;/</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 128);\">build</span><span style=\"background-color: rgb(239, 239, 239); color: rgb(0, 0, 0);\">&gt;</span></pre>"
+    }
+  ]
+}
