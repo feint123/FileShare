@@ -16,7 +16,6 @@ typedef struct StackNode{
 	ElemType data;
 }snode, *linkedstack;
 
-
 #ifdef _NO_HEADER
 void initStack(linkedstack *stack)
 {
@@ -56,27 +55,28 @@ void initStack(linkedstack *stack)
 int emptyStack(linkedstack stack)
 {
 	if (stack->next == NULL){
+		printf("null");
 		return true;
 	}
 	else
 		return false;
 }
 
-int push(linkedstack stack, ElemType e)
+int push(linkedstack *stack, ElemType e)
 {
 
 	snode *node = (snode*)malloc(sizeof(snode));
 	node->data = e;
-	node->next = stack->next;
-	stack->next = node;
+	node->next = (*stack)->next;
+	(*stack)->next = node;
 	return true;
 }
 
-ElemType pop(linkedstack stack){
-	snode *node = stack->next;
+ElemType pop(linkedstack* stack){
+	snode *node = (*stack)->next;
 	if (node == NULL)
 		return NULL;
-	stack->next = node->next;
+	(*stack)->next = node->next;
 	ElemType e = node->data;
 	free(node);
 	return e;
